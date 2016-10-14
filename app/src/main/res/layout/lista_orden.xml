@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#b2ffffff">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_red_dark">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:id="@+id/imageView3"
+
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/lis" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="LISTA DE ORDENES"
+            android:textSize="20dp"
+            android:background="@android:color/holo_red_dark"
+
+
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:typeface="sans"
+            android:textColor="#ffffff" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#baffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Técnico:"
+            android:textStyle="bold"
+            android:id="@+id/textView3"
+            android:textSize="15dp"
+            android:textIsSelectable="true"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/txtTecnico"
+            android:layout_gravity="center_horizontal"
+            android:textSize="13dp"
+            android:typeface="sans" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_marginTop="10dp"
+        android:background="#8dffffff">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_weight="0.77"
+            android:singleLine="true"
+            android:shadowColor="#f1625f5f" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView2"
+            android:src="@android:drawable/ic_menu_search"
+            android:adjustViewBounds="false"
+            android:background="#e0f04b4b"
+            android:layout_weight="0.07" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_red_dark"
+        android:layout_weight="0.11">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ordenes Asignadas"
+            android:id="@+id/textView7"
+            android:textColor="@android:color/background_light"
+            android:layout_gravity="right"
+            android:typeface="sans"
+            android:textSize="18dp"
+            android:layout_marginLeft="100dp"/>
+
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="254dp"
+            android:id="@+id/ltvOrden"
+            android:layout_gravity="left|top" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="149dp"
+        android:layout_height="72dp"
+        android:id="@+id/imgSalirr"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/sal" />
+
+</LinearLayout>

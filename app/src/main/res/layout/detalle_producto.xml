@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_red_dark">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:id="@+id/imageView3"
+
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/dee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="DETALLE PRODUCTO"
+            android:textSize="20dp"
+            android:background="@android:color/holo_red_dark"
+
+
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:typeface="sans"
+            android:textColor="#ffffff" />
+
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Técnico:"
+            android:textStyle="bold"
+            android:id="@+id/textVi"
+            android:textSize="12dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textVi4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+      >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nº orden trabajo:"
+            android:textStyle="bold"
+            android:id="@+id/textew3"
+            android:textSize="12dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textew4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+      >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Tipo trabajo:"
+            android:textStyle="bold"
+            android:id="@+id/textView3"
+            android:textSize="12dp"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViw4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginTop="20dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/background_light"
+            android:text="Tipo producto"
+            android:id="@+id/textView8"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/background_light"
+            android:layout_marginLeft="50dp"
+            android:text="Nº servicio"
+            android:id="@+id/textView9"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/background_light"
+            android:layout_marginLeft="20dp"
+            android:text="Estado de corte"
+            android:id="@+id/textView10"
+            android:textSize="12dp"
+            android:typeface="sans" />
+    </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:id="@+id/listView2" />
+
+    <ImageView
+        android:layout_width="121dp"
+        android:layout_height="62dp"
+        android:id="@+id/imgVP"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/volv" />
+
+</LinearLayout>

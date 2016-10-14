@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#ffffff">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_red_dark">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:id="@+id/imageView3"
+
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/dee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="ACTIVIDADES"
+            android:textSize="20dp"
+            android:background="@android:color/holo_red_dark"
+
+
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:typeface="sans"
+            android:textColor="#ffffff" />
+
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Técnico:"
+
+            android:textStyle="bold"
+            android:id="@+id/textVi"
+            android:textSize="12dp"
+            android:textIsSelectable="true"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textVi4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nº Orden trabajo:"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:id="@+id/textfghew3"
+            android:textSize="12dp"
+            android:textIsSelectable="true"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textew4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Tipo trabajo:"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:id="@+id/texthjkw3"
+            android:textSize="12dp"
+            android:textIsSelectable="true"
+            android:typeface="sans" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textghw4"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12dp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/background_light"
+                android:text="Actividad"
+                android:id="@+id/textView8"
+                android:typeface="sans" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="198dp"
+        android:id="@+id/gridView3" />
+
+    <ImageView
+        android:layout_width="134dp"
+        android:layout_height="69dp"
+        android:id="@+id/imgVA"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/volv" />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+package com.comteco.jimenavidal.controlorden;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+
+/**
+ * Created by Jimena Vidal on 02/09/2016.
+ */
+public class Detalle_Producto extends AppCompatActivity {
+   ImageView v;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.detalle_producto);
+
+        v=(ImageView) findViewById(R.id.imgVP);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent ingresar= new Intent(Detalle_Producto.this, OrdenTrabajo.class);
+                startActivity(ingresar);*/
+                onBackPressed();
+            }
+        });
+
+
+    }
+}
