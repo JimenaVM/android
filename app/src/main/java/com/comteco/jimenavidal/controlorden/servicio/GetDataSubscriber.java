@@ -15,7 +15,7 @@ import org.ksoap2.transport.HttpTransportSE;
  * Created by comteco11 on 11/10/2016.
  */
 @TargetApi(Build.VERSION_CODES.CUPCAKE)
-public class GetDataOrdenes extends AsyncTask <Void, Void, Void> {
+public class GetDataSubscriber extends AsyncTask <Void, Void, Void> {
 
     // TODO: Crear como variables locales textviews
 
@@ -32,7 +32,7 @@ public class GetDataOrdenes extends AsyncTask <Void, Void, Void> {
 
 
     // TODO: adicionar como paremtros los textviews
-    public GetDataOrdenes(String order_id,TextView tecnicos,TextView ordenTrabajo,TextView numeroOrden, TextView fechaEmi, TextView clienteNom,TextView tipoCliente,TextView digitador, TextView tipoTrab ){
+    public GetDataSubscriber(String order_id, TextView tecnicos, TextView ordenTrabajo, TextView numeroOrden, TextView fechaEmi, TextView clienteNom, TextView tipoCliente, TextView digitador, TextView tipoTrab ){
         this.order_id = order_id;
         this.tecnico=tecnicos;
         this.ordentrab=ordenTrabajo;

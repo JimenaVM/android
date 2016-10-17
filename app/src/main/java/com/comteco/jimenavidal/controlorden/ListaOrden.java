@@ -1,10 +1,13 @@
 package com.comteco.jimenavidal.controlorden;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 /**
  * Created by Jimena Vidal on 02/09/2016.
  */
-public class ListaOrden extends FragmentActivity {
+public class ListaOrden extends AppCompatActivity {
 
     String nombreTecnico;
     TextView tecnico;
@@ -33,6 +36,7 @@ public class ListaOrden extends FragmentActivity {
     ListView listView;
      String[] clientes;
     String orden,tipo,estado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +49,6 @@ public class ListaOrden extends FragmentActivity {
 
         listView.setOnItemClickListener(new ListClickHandler());
 
-
-
-
         ImageView salir=(ImageView) findViewById(R.id.imgSalirr);
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +59,8 @@ public class ListaOrden extends FragmentActivity {
                 startActivity(ingresar);
             }
         });
-        AsyncCallWS task=new AsyncCallWS(tecnico);
+
+        AsyncCallWS task=new AsyncCallWS(ListaOrden.this, tecnico);
         task.execute(nombreTecnico);
 
 
@@ -86,15 +88,25 @@ public class ListaOrden extends FragmentActivity {
         String NAMESPACE = "http://ws.wsComteco.comteco.com.bo/";
         String URL = "http://192.9.200.150:8080/wsComteco/apiComteco";
         TextView name;
+        Context context;
+        ProgressDialog progressDialog;
 
-        public AsyncCallWS(TextView paramName) {
+        public AsyncCallWS(Context context, TextView paramName) {
+            this.context = context;
             name = paramName;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = ProgressDialog.show(context, "Conectando con el Servidor", "Obteniendo los datos...",true);
         }
 
         @Override
         protected Void doInBackground(String... params) {
 
             String tecnico = params[0];
+            Log.i(TAG, "id_" + tecnico);
 
             Log.i(TAG, "doInBackground");
             try {
@@ -131,13 +143,16 @@ public class ListaOrden extends FragmentActivity {
         @Override
         protected void onPostExecute(Void result) {
             Log.i(TAG, "onPostExecute");
-            clientes = new String[1];
-            SoapObject getProperty0=(SoapObject)resultString.getProperty(0);
+            progressDialog.dismiss();
+            Log.d(TAG, "datos: " + resultString);
+
+            //clientes = new String[1];
+            /*SoapObject getProperty0=(SoapObject)resultString.getProperty(0);
             SoapObject getDataOrdenes=(SoapObject)getProperty0.getProperty("dataOrdenesGral");
-            String getCliente=getDataOrdenes.getProperty("tecnico").toString();
+            String getCliente=getDataOrdenes.getProperty("tecnico").toString();*/
 
             //inicia datos para listview
-            for ( int i=0;i<1;i++ ) {
+           /* for ( int i=0;i<1;i++ ) {
                 orden = getDataOrdenes.getProperty("orden").toString();
                 tipo = getDataOrdenes.getProperty("tipoTrabajo").toString();
                 estado = getDataOrdenes.getProperty("estadoOt").toString();
@@ -150,11 +165,11 @@ public class ListaOrden extends FragmentActivity {
 
 
 
-            }
+            }*/
             //hasta aqui
 
-            Log.d(TAG,"COUNT:"+resultString.getPropertyCount());
-            Log.d(TAG,"data:"+resultString.getProperty(0));
+            //Log.d(TAG,"COUNT:"+resultString.getPropertyCount());
+            //Log.d(TAG,"data:"+resultString.getProperty(0));
 
             //Log.d(TAG,"dataOrdenes:"+getCliente);
 
@@ -162,10 +177,10 @@ public class ListaOrden extends FragmentActivity {
 
           //  name.setText(getCliente);
 
-            ArrayAdapter<String> adaptador = new ArrayAdapter<String>(ListaOrden.this,
+            /*ArrayAdapter<String> adaptador = new ArrayAdapter<String>(ListaOrden.this,
                                              android.R.layout.simple_list_item_1, clientes);
 
-            listView.setAdapter(adaptador);
+            listView.setAdapter(adaptador);*/
 
 
 

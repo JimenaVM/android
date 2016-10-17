@@ -1,14 +1,11 @@
 package com.comteco.jimenavidal.controlorden;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.comteco.jimenavidal.controlorden.servicio.GetDataOrdenes;
 
 /**
  * Created by Jimena Vidal on 02/09/2016.
@@ -24,8 +21,8 @@ public class Detalle extends Fragment  {
 
         super.onCreate(savedInstanceState);
         //nombreTec=getIntent().getStringExtra("nombre");
-        Bundle bundle =getId();
-        String valorRecibido= getIntent().getStringExtra("dato_bundle");
+        //Bundle bundle =getId();
+        //String valorRecibido= getIntent().getStringExtra("dato_bundle");
 
 
     }
@@ -48,9 +45,9 @@ public class Detalle extends Fragment  {
         Digitador=(TextView)rootView.findViewById(R.id.txtDig);
         Cliente=(TextView)rootView.findViewById(R.id.txtCliente);
 
-        GetDataOrdenes n=new GetDataOrdenes();
-        tecnico.setText(n.tecnico);
-        numTrabajo.setText(ordenTrabajo);
+        //GetDataSubscriber n=new GetDataSubscriber();
+       // tecnico.setText(n.tecnico);
+        //numTrabajo.setText(ordenTrabajo);
 
 
 

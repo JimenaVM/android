@@ -2,6 +2,7 @@ package com.comteco.jimenavidal.controlorden;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -70,13 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 getLogin = login.getText().toString().toUpperCase();
                 getPass = pass.getText().toString();
 
-                AsyncCallWS task = new AsyncCallWS(res);
-                task.execute(getLogin);
-
-
-                   Intent ingresar= new Intent(MainActivity.this, ListaOrden.class);
-                   ingresar.putExtra("nombre",getLogin+"");
-                    startActivity(ingresar);
+                Intent ingresar= new Intent(MainActivity.this, ListaOrden.class);
+                ingresar.putExtra("nombre",getLogin);
+                startActivity(ingresar);
 
 
             }
@@ -84,74 +81,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class AsyncCallWS extends AsyncTask<String, Void, Void> {
-
-        String SOAP_ACTION = "";
-        String METHOD_NAME = "getDataOrdenesGral";
-        String NAMESPACE = "http://ws.wsComteco.comteco.com.bo/";
-        String URL = "http://192.9.200.150:8080/wsComteco/apiComteco";
-        TextView name;
-
-        public AsyncCallWS(TextView paramName) {
-            name = paramName;
-        }
-
-        @Override
-        protected Void doInBackground(String... params) {
-
-            String tecnico = params[0];
-
-            Log.i(TAG, "doInBackground");
-            try {
-                SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
-                Request.addProperty("login",tecnico);
-
-
-                SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-                // soapEnvelope . dotNet   =   true ;
-                soapEnvelope.implicitTypes = true;
-                soapEnvelope.setOutputSoapObject(Request);
-
-                HttpTransportSE transport = new HttpTransportSE(URL);
-                transport.debug = true;
-
-                transport.call(SOAP_ACTION, soapEnvelope);
-
-
-                Log.v("SOAP_RETURN", transport.requestDump);
-                Log.v("SOAP_RETURN", transport.responseDump);
-
-
-                resultString   =   ( SoapObject )   soapEnvelope . bodyIn;
-
-
-                Log.i(TAG, "Result Celsius: " + resultString);
-            } catch (Exception ex) {
-                Log.e(TAG, "Error: " + ex.getMessage());
-            }
-            return null;
-        }
-
-
-        @Override
-        protected void onPostExecute(Void result) {
-            Log.i(TAG, "onPostExecute");
-
-            SoapObject getProperty0=(SoapObject)resultString.getProperty(0);
-            SoapObject getDataOrdenes=(SoapObject)getProperty0.getProperty("dataOrdenesGral");
-            String getCliente=getDataOrdenes.getProperty("tecnico").toString();
-
-            Log.d(TAG,"COUNT:"+resultString.getPropertyCount());
-            Log.d(TAG,"data:"+resultString.getProperty(0));
-            //Log.d(TAG,"dataOrdenes:"+getCliente);
-
-
-
-           // name.setText(getCliente);
-            //Toast.makeText(MainActivity.this, "Response:  " + resultString.toString(), Toast.LENGTH_LONG).show();
-        }
-
-
-    }
 
 }
